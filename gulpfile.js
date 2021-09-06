@@ -13,7 +13,7 @@ let path = {
     src: {
         html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"], // include-файлы помечать "_"
         css: source_folder + "/**/*.scss",
-        js: source_folder+"/js/index.js",
+        js: source_folder+"/**/*.js",
         components: source_folder+"/components/",
     },
     watch: {
@@ -31,10 +31,10 @@ let { src, dest } = require('gulp'),
     del = require("del"),
     scss = require('gulp-sass')(require('sass')),
     group_media = require("gulp-group-css-media-queries"),
-    clean_css = require("gulp-clean-css"),
     rename = require("gulp-rename"),
     uglify = require("gulp-uglify-es").default,
-    concat = require("gulp-concat");
+    concat = require("gulp-concat"),
+    csso = require("gulp-csso");
 
     function browserSync (params) {
         browsersync.init({
@@ -66,16 +66,14 @@ let { src, dest } = require('gulp'),
     function css() {
         return src(path.src.css)
             .pipe(
-                scss({
-                    outputStyle: "expanded"
-                }).on("error", scss.logError)
+                scss().on("error", scss.logError)
             )
             .pipe(
                 group_media()
             )
+            .pipe(csso())
             .pipe(concat('styles.css'))
             .pipe(dest(path.build.css))
-            .pipe(clean_css())
             .pipe(
                 rename({
                     extname: ".min.css"
@@ -87,7 +85,7 @@ let { src, dest } = require('gulp'),
 
     function js() {
         return src(path.src.js)
-            .pipe(fileinclude())
+            .pipe(concat('index.js'))
             .pipe(dest(path.build.js))
             .pipe(
                 uglify()
@@ -104,9 +102,9 @@ let { src, dest } = require('gulp'),
     let build = gulp.series(clean, gulp.parallel(js, css, html));
     let watch = gulp.parallel(build, watchFiles, browserSync);
 
-    exports.build = build;
     exports.js = js;
     exports.css = css;
     exports.html = html;
+    exports.build = build;
     exports.watch = watch;
     exports.default = watch;
