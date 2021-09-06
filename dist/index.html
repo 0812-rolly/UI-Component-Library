@@ -4,21 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/styles.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/800563b975.js" crossorigin="anonymous"></script>
     <title>Component Library</title>
 </head>
 <body>
     <div class="cl-wrapper">
         <header class="cl-header">
-            <h1 class="cl-header__title">My Component Library</h1>
+            <p class="cl-header__title">My Component Library</p>
         </header>
+    <div class="cl-content">
         <div class="ui-inputgroup">
-            <div class="ui-inputgroup__addon">
-                <p>TEXT</p>
-                <span class="ui-inputgroup__addon__icon"><i class="fas fa-user"></i></span>
-                <input class="ui-inputgroup__addon__input-name" type="text" placeholder="Username">
+            <p class="ui-inputgroup__title">InputGroup</p>
+            <p class="ui-inputgroup__paragraph">Left Addon</p>
+            <div class="left-addon">
+                <span class="left-addon__icon"><i class="fas fa-user"></i></span>
+                <input class="left-addon__input" type="text" placeholder="Username">
             </div>
-            <!-- <left-addon></left-addon> -->
+            <p class="ui-inputgroup__paragraph">Left and Right Addon</p>
+            <div class="left-and-right-addon">
+                <span class="left-and-right-addon__symbol-left">$</span>
+                <input class="left-and-right-addon__input" type="text" placeholder="Price">
+                <span class="left-and-right-addon__symbol-right">.00</span>
+            </div>
+            <p class="ui-inputgroup__paragraph">Multiple Addon</p>
+            <div class="multiple-addon">
+                <span class="multiple-addon__icon-first"><i class="far fa-credit-card"></i></span>
+                <span class="multiple-addon__icon-second"><i class="fab fa-cc-visa"></i></span>
+                <input class="multiple-addon__input" type="text" placeholder="Price">
+                <span class="multiple-addon__symbol-first">$</span>
+                <span class="multiple-addon__symbol-second">.00</span>
+            </div>
+        </div>
+        <div class="ui-buttongroup">
+            <p class="ui-buttongroup__title">Buttons</p>
+            <p class="ui-inputgroup__paragraph">Buttons</p>
+            <div class="general-buttons">
+                <button type="button" class="general-buttons general-buttons_primary">Primary</button>
+                <button type="button" class="general-buttons general-buttons_secondary">Secondary</button>
+                <button type="button" class="general-buttons general-buttons_success">Success</button>
+                <button type="button" class="general-buttons general-buttons_info">Info</button>
+                <button type="button" class="general-buttons general-buttons_warning">Warning</button>
+                <button type="button" class="general-buttons general-buttons_danger">Danger</button>
+            </div>
+            <p class="ui-inputgroup__paragraph">Blue Buttons with check mark</p>
+            <div class="check-mark-buttons">
+                <button type="button" class="check-mark-buttons check-mark-buttons_without-check-mark">Click</button>
+                <button type="button" class="check-mark-buttons check-mark-buttons_left-check-mark"><i class="fas fa-check"></i> Click</button>
+                <button type="button" class="ucheck-mark-buttons check-mark-buttons_right-check-mark">Click <i class="fas fa-check"></i></button>
+                <button type="button" class="check-mark-buttons check-mark-buttons_check-mark"><i class="fas fa-check"></i></button>
+                <button type="button" class="ucheck-mark-buttons check-mark-buttons_disabled-check-mark"><i class="fas fa-check"></i> Disabled</button>
+            </div>
+            <p class="ui-inputgroup__paragraph">Rounded Buttons</p>
+            <div class="rounded-buttons">
+                <button type="button" class="rounded-buttons rounded-buttons_primary">Primary</button>
+                <button type="button" class="rounded-buttons rounded-buttons_secondary">Secondary</button>
+                <button type="button" class="rounded-buttons rounded-buttons_success">Success</button>
+                <button type="button" class="rounded-buttons rounded-buttons_info">Info</button>
+                <button type="button" class="rounded-buttons rounded-buttons_warning">Warning</button>
+                <button type="button" class="rounded-buttons rounded-buttons_danger">Danger</button>
+            </div>
+        </div>
         </div>
     </div>
     <script src="js/index.min.js"></script>
