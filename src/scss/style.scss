@@ -8,7 +8,6 @@ $title-color: #56B280;
 body {
     font-family: $font;
     font-size: 100%;
-    line-height: 1.75;
     color: $main-color;
     margin: 0;
 }
@@ -41,29 +40,53 @@ body {
 }
 .ui-inputgroup {
     padding: 0 20px;
-
-    &__title {
-        color: $title-color;
-        font-size: 3rem;
+    margin-bottom: 60px;
     }
-    &__paragraph {
-        font-size: 1.8rem;
-        color: $main-color;
-        font-weight: 200;
-        margin: 10px 0;
-    }
-}
 .ui-buttongroup {
     padding: 0 20px;
-
-    &__title {
-        color: $title-color;
-        font-size: 3rem;
-    }
-    &__paragraph {
-        font-size: 1.8rem;
-        color: $main-color;
-        font-weight: 200;
-        margin: 10px 0;
-    }
+    margin-bottom: 60px;
+}
+.ui-dropdown {
+    padding: 0 20px;
+    margin-bottom: 60px;
+    box-sizing: content-box;
+}
+.ui-radiobutton {
+    padding: 0 20px;
+    margin-bottom: 60px;
+}
+.ui-checkbox {
+    padding: 0 20px;
+    margin-bottom: 60px;
+}
+.ui-inputswitch {
+    padding: 0 20px;
+    margin-bottom: 60px;
+}
+.title {
+    color: $title-color;
+    font-size: 3rem;
+}
+.paragraph {
+    font-size: 1.8rem;
+    color: $main-color;
+    font-weight: 200;
+    margin: 10px 0;
+}
+.button {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 5px;
+}
+.input:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 5px #9ecaed;
 }

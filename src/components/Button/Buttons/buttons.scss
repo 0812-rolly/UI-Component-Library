@@ -1,0 +1,45 @@
+@import "src/scss/common.scss";
+
+.buttons {
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    position: relative;
+    display: block;
+}
+
+.buttons-primary {
+    @include buttonStyle;
+}
+.buttons-secondary {
+    @include buttonStyle($background-color: $secondary);
+}
+.buttons-success {
+    @include buttonStyle($background-color: $success);
+}
+.buttons-info {
+    @include buttonStyle($background-color: $info);
+}
+.buttons-warning {
+    @include buttonStyle($background-color: $warning);
+}
+.buttons-danger {
+    @include buttonStyle($background-color: $danger);
+}
+
+.buttons-primary:hover {
+    @include darkenButton;
+}
+.buttons-secondary:hover {
+    @include darkenButton($background-color: $secondary);
+}
+.buttons-success:hover {
+    @include darkenButton($background-color: $success);
+}
+.buttons-info:hover {
+    @include darkenButton($background-color: $info);
+}
+.buttons-warning:hover {
+    @include darkenButton($background-color: $warning);
+}
+.buttons-danger:hover {
+    @include darkenButton($background-color: $danger);
+}

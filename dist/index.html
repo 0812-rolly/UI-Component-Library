@@ -17,57 +17,103 @@
         </header>
     <div class="cl-content">
         <div class="ui-inputgroup">
-            <p class="ui-inputgroup__title">InputGroup</p>
-            <p class="ui-inputgroup__paragraph">Left Addon</p>
+            <p class="title">InputGroup</p>
+            <p class="paragraph">Left Addon</p>
             <div class="left-addon">
-                <span class="left-addon__icon"><i class="fas fa-user"></i></span>
-                <input class="left-addon__input" type="text" placeholder="Username">
+                <span class="icon"><i class="fas fa-user"></i></span>
+                <input class="input" type="text" placeholder="Username">
             </div>
-            <p class="ui-inputgroup__paragraph">Left and Right Addon</p>
+            <p class="paragraph">Left and Right Addon</p>
             <div class="left-and-right-addon">
-                <span class="left-and-right-addon__symbol-left">$</span>
-                <input class="left-and-right-addon__input" type="text" placeholder="Price">
-                <span class="left-and-right-addon__symbol-right">.00</span>
+                <span class="symbol-left">$</span>
+                <input class="input" type="text" placeholder="Price">
+                <span class="symbol-right">.00</span>
             </div>
-            <p class="ui-inputgroup__paragraph">Multiple Addon</p>
+            <p class="paragraph">Multiple Addon</p>
             <div class="multiple-addon">
-                <span class="multiple-addon__icon-first"><i class="far fa-credit-card"></i></span>
-                <span class="multiple-addon__icon-second"><i class="fab fa-cc-visa"></i></span>
-                <input class="multiple-addon__input" type="text" placeholder="Price">
-                <span class="multiple-addon__symbol-first">$</span>
-                <span class="multiple-addon__symbol-second">.00</span>
+                <span class="icon-first"><i class="far fa-credit-card"></i></span>
+                <span class="icon-second"><i class="fab fa-cc-visa"></i></span>
+                <input class="input" type="text" placeholder="Price">
+                <span class="symbol-first">$</span>
+                <span class="symbol-second">.00</span>
             </div>
         </div>
         <div class="ui-buttongroup">
-            <p class="ui-buttongroup__title">Buttons</p>
-            <p class="ui-inputgroup__paragraph">Buttons</p>
-            <div class="general-buttons">
-                <button type="button" class="general-buttons general-buttons_primary">Primary</button>
-                <button type="button" class="general-buttons general-buttons_secondary">Secondary</button>
-                <button type="button" class="general-buttons general-buttons_success">Success</button>
-                <button type="button" class="general-buttons general-buttons_info">Info</button>
-                <button type="button" class="general-buttons general-buttons_warning">Warning</button>
-                <button type="button" class="general-buttons general-buttons_danger">Danger</button>
+            <p class="title">Button</p>
+            <p class="paragraph">Buttons</p>
+            <div class="buttons">
+                <button type="button" class="button buttons-primary">Primary</button>
+                <button type="button" class="button buttons-secondary">Secondary</button>
+                <button type="button" class="button buttons-success">Success</button>
+                <button type="button" class="button buttons-info">Info</button>
+                <button type="button" class="button buttons-warning">Warning</button>
+                <button type="button" class="button buttons-danger">Danger</button>
             </div>
-            <p class="ui-inputgroup__paragraph">Blue Buttons with check mark</p>
-            <div class="check-mark-buttons">
-                <button type="button" class="check-mark-buttons check-mark-buttons_without-check-mark">Click</button>
-                <button type="button" class="check-mark-buttons check-mark-buttons_left-check-mark"><i class="fas fa-check"></i> Click</button>
-                <button type="button" class="ucheck-mark-buttons check-mark-buttons_right-check-mark">Click <i class="fas fa-check"></i></button>
-                <button type="button" class="check-mark-buttons check-mark-buttons_check-mark"><i class="fas fa-check"></i></button>
-                <button type="button" class="ucheck-mark-buttons check-mark-buttons_disabled-check-mark"><i class="fas fa-check"></i> Disabled</button>
+            <p class="paragraph">Blue Buttons with check mark</p>
+            <div class="blue-buttons">
+                <button type="button" class="button buttons-primary">Click</button>
+                <button type="button" class="button buttons-primary"><i class="fas fa-check"></i>  Click</button>
+                <button type="button" class="button buttons-primary">Click  <i class="fas fa-check"></i></button>
+                <button type="button" class="button buttons-primary"><i class="fas fa-check"></i></button>
+                <button type="button" class="button buttons-primary-disabled"><i class="fas fa-check"></i>  Disabled</button>
             </div>
-            <p class="ui-inputgroup__paragraph">Rounded Buttons</p>
+            <p class="paragraph">Rounded Buttons</p>
             <div class="rounded-buttons">
-                <button type="button" class="rounded-buttons rounded-buttons_primary">Primary</button>
-                <button type="button" class="rounded-buttons rounded-buttons_secondary">Secondary</button>
-                <button type="button" class="rounded-buttons rounded-buttons_success">Success</button>
-                <button type="button" class="rounded-buttons rounded-buttons_info">Info</button>
-                <button type="button" class="rounded-buttons rounded-buttons_warning">Warning</button>
-                <button type="button" class="rounded-buttons rounded-buttons_danger">Danger</button>
+                <button type="button" class="button buttons-primary rounded">Primary</button>
+                <button type="button" class="button buttons-secondary rounded">Secondary</button>
+                <button type="button" class="button buttons-success rounded">Success</button>
+                <button type="button" class="button buttons-info rounded">Info</button>
+                <button type="button" class="button buttons-warning rounded">Warning</button>
+                <button type="button" class="button buttons-danger rounded">Danger</button>
             </div>
         </div>
+        <div class="ui-dropdown">
+            <p class="title">DropDown</p>
+            <p class="paragraph">Single</p>
+            <div class="sinle-dropdown" id="select1" name="select" field></div>
+            <p class="paragraph">Content with filter</p>
+            <div class="filtered-dropdown">
+            <select id="filtered" name="filtered" data-dropdown>
+                <option value="">Select language</option>
+                <option value="C">C</option>
+                <option value="Java">Java</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+                <option value="C++">C++</option>
+                <option value="C#">C#</option>
+                <option value="PHP">PHP</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Kotlin">Kotlin</option>
+              </select>
+            </div>
+            <p class="paragraph">Multiselect</p>
+            <div class="multiselect">
+            <select id="multiselect" multiple data-multi-select-plugin>
+                <option value="C">C</option>
+                <option value="Java">Java</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+                <option value="C++">C++</option>
+                <option value="C#">C#</option>
+                <option value="PHP">PHP</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Kotlin">Kotlin</option>
+            </select>
+            </div>
         </div>
+        <div class="ui-radiobutton">
+            <p class="title">RadioButton</p>
+            <p class="paragraph">Basic</p>
+        </div>
+        <div class="ui-checkbox">
+            <p class="title">CheckBox</p>
+            <p class="paragraph">Basic</p>
+        </div>
+        <div class="ui-inputswitch">
+            <p class="title">InputSwitch</p>
+            <p class="paragraph">Basic</p>
+        </div>
+    </div>
     </div>
     <script src="js/index.min.js"></script>
     <!-- <script type="module" src="/components/LeftAddon/leftAddon.js"></script> -->

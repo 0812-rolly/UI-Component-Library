@@ -1,0 +1,24 @@
+@import "src/scss/common.scss";
+
+.left-and-right-addon {
+    @include addonBlockStyles;
+}
+.symbol-left {
+    @include addonsSymbolStyle;
+    margin-right: -1px;
+    border-radius: .25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.input {
+    @include inputPrimary;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.symbol-right {
+    @include addonsSymbolStyle;
+    margin-left: -1px;
+    border-radius: .25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

@@ -1,0 +1,21 @@
+@import "src/scss/common.scss";
+
+.blue-buttons {
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    position: relative;
+    display: block;
+}
+.blue-buttons i {
+    font-size: .85rem;
+}
+.buttons-primary {
+    @include buttonStyle;
+}
+.buttons-primary-disabled {
+    color: rgba(white, 0.8);
+    background-color: rgba(#007bff, 0.6);
+    border-radius: .25rem;
+}
+.buttons-primary:hover {
+    @include darkenButton;
+}

@@ -1,0 +1,32 @@
+@import "src/scss/common.scss";
+
+.multiple-addon {
+    @include addonBlockStyles;
+}
+.icon-first {
+    @include addonsSymbolStyle;
+    margin-right: -1px;
+    border-radius: .25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.icon-second {
+   @include addonsSymbolStyle;
+   margin-right: -1px;
+}
+.input {
+    @include inputPrimary;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.symbol-first {
+    @include addonsSymbolStyle;
+    margin-left: -1px;
+}
+.symbol-second {
+    @include addonsSymbolStyle;
+    margin-left: -1px;
+    border-radius: .25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

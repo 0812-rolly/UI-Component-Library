@@ -1,0 +1,50 @@
+@import "src/scss/common.scss";
+
+.rounded-buttons {
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    position: relative;
+    display: block;
+}
+.buttons-primary.rounded {
+    @include buttonStyle;
+    border-radius: 1.1rem;
+}
+.buttons-secondary.rounded {
+    @include buttonStyle($background-color: $secondary);
+    border-radius: 1.1rem;
+}
+.buttons-success.rounded {
+    @include buttonStyle($background-color: $success);
+    border-radius: 1.1rem;
+}
+.buttons-info.rounded {
+    @include buttonStyle($background-color: $info);
+    border-radius: 1.1rem;
+}
+.buttons-warning.rounded {
+    @include buttonStyle($background-color: $warning);
+    border-radius: 1.1rem;
+}
+.buttons-danger.rounded {
+    @include buttonStyle($background-color: $danger);
+    border-radius: 1.1rem;
+}
+
+.buttons-primary:hover {
+    @include darkenButton;
+}
+.buttons-secondary:hover {
+    @include darkenButton($background-color: $secondary);
+}
+.buttons-success:hover {
+    @include darkenButton($background-color: $success);
+}
+.buttons-info:hover {
+    @include darkenButton($background-color: $info);
+}
+.buttons-warning:hover {
+    @include darkenButton($background-color: $warning);
+}
+.buttons-danger:hover {
+    @include darkenButton($background-color: $danger);
+}

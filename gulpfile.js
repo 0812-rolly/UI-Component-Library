@@ -1,4 +1,14 @@
-const fileinclude = require('gulp-file-include');
+const { src, dest } = require('gulp'),
+    gulp = require('gulp'),
+    browsersync = require("browser-sync").create(),
+    del = require("del"),
+    fileinclude = require('gulp-file-include');
+    scss = require('gulp-sass')(require('sass')),
+    group_media = require("gulp-group-css-media-queries"),
+    rename = require("gulp-rename"),
+    uglify = require("gulp-uglify-es").default,
+    concat = require("gulp-concat"),
+    csso = require("gulp-csso");
 
 let project_folder = "dist";
 let source_folder = "src";
@@ -7,34 +17,23 @@ let path = {
     build: {
         html: project_folder + "/",
         css: project_folder + "/css/",
-        js: project_folder+"/js/",
-        components: project_folder+"/components/",
+        js: project_folder +"/js/",
+        components: project_folder +"/components/",
     },
     src: {
         html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"], // include-файлы помечать "_"
         css: source_folder + "/**/*.scss",
-        js: source_folder+"/**/*.js",
-        components: source_folder+"/components/",
+        js: source_folder + "/**/*.js",
+        components: source_folder + "/components/",
     },
     watch: {
         html: source_folder + "/**/*.html",
         css: source_folder + "/**/*.scss, ['sass']",
-        js: source_folder+"/js/**/*.js",
-        components: source_folder+"/components/**/*.+(js|scss)",
+        js: source_folder + "/js/**/*.js",
+        components: source_folder + "/components/**/*.+(js|scss)",
     },
     clean: "./" + project_folder + "/"
 }
-
-let { src, dest } = require('gulp'),
-    gulp = require('gulp'),
-    browsersync = require("browser-sync").create(),
-    del = require("del"),
-    scss = require('gulp-sass')(require('sass')),
-    group_media = require("gulp-group-css-media-queries"),
-    rename = require("gulp-rename"),
-    uglify = require("gulp-uglify-es").default,
-    concat = require("gulp-concat"),
-    csso = require("gulp-csso");
 
     function browserSync (params) {
         browsersync.init({
