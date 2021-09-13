@@ -282,13 +282,12 @@ function clickDropdown(e) {
     const dropdown = e.target;
     const wrapper = dropdown.parentNode.parentNode;
     const input_search = wrapper.querySelector(".selected-input");
-    const select = wrapper.querySelector("select");
+    const select = wrapper.querySelector("select"); 
     dropdown.classList.toggle("active");
 
     if (dropdown.classList.contains("active")) {
         removePlaceholder(wrapper);
         input_search.focus();
-
         if (!input_search.value) {
             populateAutocompleteList(select, "", true);
         } else {
@@ -329,6 +328,9 @@ function populateAutocompleteList(select, query, dropdown = false) {
     const autocomplete_list = wrapper.querySelector(".autocomplete-list");
     autocomplete_list.innerHTML = "";
     const result_size = options_to_show.length;
+    // const autcompleteList = document.querySelector(".autocomplete-list");
+    // autcompleteList.style.borderTop = '';
+    // autcompleteList.style.borderBottom = '';
 
     if (result_size == 1) {
 
@@ -527,6 +529,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
 
 
 /* define constants for adding classes */

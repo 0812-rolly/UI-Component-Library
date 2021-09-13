@@ -1,3 +1,8 @@
+$background-color: #fff; 
+$border-color: #ccc;
+$text-color: #262626;
+$selected-color: #3e759c;
+
  .dropdown {
     position: relative;
     padding: 1.5rem 1.5rem 1.5rem 0;
@@ -7,10 +12,10 @@
   
   .dropdown__selected {
     display: flex;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: $background-color;
+    border: 1px solid $border-color;
     border-radius: 4px;
-    color: #262626;
+    color: $text-color;
     cursor: pointer;
     align-items: center;
     width: 100%;
@@ -27,7 +32,7 @@
     height: 0px;
     border-width: 4px;
     border-style: solid;
-    border-color: #262626 transparent transparent;
+    border-color: $text-color transparent transparent;
   }
 
   .dropdown__selected.active::after {
@@ -36,7 +41,7 @@
     height: 0px;
     border-width: 4px;
     border-style: solid;
-    border-color: #262626 transparent transparent;
+    border-color: $text-color transparent transparent;
     transform: rotateX(180deg);
   }
   
@@ -48,11 +53,11 @@
     top: -1.025rem;
     left: 0;
     right: 0;
-    border: 1px solid #ccc;
+    border: 1px solid $border-color;
     line-height: 2rem;
     overflow-y: auto;
     z-index: 2;
-    background-color: #fff;
+    background-color: $background-color;
   }
   
   .dropdown__menu_items {
@@ -69,8 +74,8 @@
 	width: 100%;
 	border: 0;
   font-size: .9rem;
-	color: #262626;
-	border-bottom: 1px solid #ccc;
+	color: $text-color;
+	border-bottom: 1px solid $border-color;
 	padding: 12px;
 	outline: 0;
 	background-color: #f9f9f9;
@@ -81,7 +86,7 @@
   }
   
   .dropdown__menu_item:hover {
-	background-color: #3e759c;
+	background-color: $selected-color;
     color: white;
     opacity: 0.8;
     cursor: pointer;
@@ -90,7 +95,7 @@
   
   .dropdown__menu_item.selected,
   .dropdown__menu_item.selected:hover {
-    background-color: #3e759c;
+    background-color: $selected-color;
     opacity: 0.8;
     color: white;
     display: flex;

@@ -1,0 +1,63 @@
+/* Customize the label (the container) */
+$checkboxActive: #3e759c;
+$borderColor: #d1d7e3;
+$markColor: #fff;
+
+.basic-checkbox {
+    position: relative;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    display: block;
+    width: 80%;
+}
+.check_box {
+  display: block;
+  position: relative;
+  margin: 16px 0;
+  padding-left: 34px;
+  cursor: pointer;
+  user-select: none;
+  line-height: 2rem;
+  font-size: 0.95rem;
+  font-weight: 300;
+  input {
+      display: none;
+      &:checked ~ .check-mark {
+        background: rgba($checkboxActive, 0.8);
+        border: transparent;
+        transition: .7s ease;
+        &:after {
+          display: block;
+        }
+      }
+  }
+  &:hover {
+    input ~ .check-mark {
+      transform: scale(.92);
+    }
+}
+}
+.check-mark {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  border-radius: 4px;
+  border: 1px solid $borderColor;
+  transition: .7s ease;
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+    transform: scale(.4);
+  }
+}
+.check_box .check-mark:after {
+  left: 8px;
+  top: 4px;
+  width: 6px;
+  height: 11px;
+  border: 1px solid $markColor;
+  border-width: 0 2.8px 2.8px 0;
+  transform: rotate(45deg);
+}

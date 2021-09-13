@@ -1,3 +1,8 @@
+$background-color: #fff; 
+$border-color: #ccc;
+$text-color: #262626;
+$selected-color: #3e759c;
+
 .sinle-dropdown {
     padding: 1.5rem 1.5rem 1.5rem 0;
     position: relative;
@@ -10,10 +15,10 @@
   
   .select__toggle {
     display: flex;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: $background-color;
+    border: 1px solid $border-color;
     border-radius: 4px;
-    color: #262626;
+    color: $text-color;
     cursor: pointer;
     align-items: center;
     text-align: start;
@@ -31,7 +36,7 @@
     height: 0px;
     border-width: 4px;
 		border-style: solid;
-		border-color: #262626 transparent transparent;
+		border-color: $text-color transparent transparent;
     }
   
   .select__toggle:focus {
@@ -50,12 +55,12 @@
     top: -1.025rem;
     left: 0;
     right: 0;
-    border: 1px solid #ccc;
+    border: 1px solid $border-color;
     max-height: 10rem;
     line-height: 2rem;
     overflow-y: auto;
     z-index: 2;
-    background-color: #fff;
+    background-color: $background-color;
   }
   .select_show .select__dropdown {
     display: block;
@@ -72,7 +77,7 @@
     padding: 6px 12px;
   }
   .select__option_selected {
-    background-color: #3e759c;
+    background-color: $selected-color;
     opacity: 0.8;
     color: white;
     display: flex;
@@ -80,7 +85,7 @@
     justify-content: space-between;
   }
   .select__option:hover {
-    background-color: #3e759c;
+    background-color: $selected-color;
     color: white;
     opacity: 0.8;
     cursor: pointer;
