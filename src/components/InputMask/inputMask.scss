@@ -1,0 +1,26 @@
+$border-color: #ccc;
+$text-color: #262626;
+
+.phone-mask {
+    position: relative;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    display: block;
+    width: 40%;
+}
+
+.phone-mask input {
+    border-radius: 4px;
+    border: 1px solid $border-color;
+    text-align: center;
+    color: $text-color;
+    cursor: pointer;
+    align-items: center;
+    text-align: start;
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    margin: 15px 0;
+}
+.phone-mask input::placeholder {
+    opacity: 0.5;
+}
