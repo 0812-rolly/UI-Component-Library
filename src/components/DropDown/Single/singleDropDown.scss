@@ -1,7 +1,7 @@
 $background-color: #fff; 
 $border-color: #ccc;
 $text-color: #262626;
-$selected-color: #3e759c;
+$selected-color: #007bff;
 
 .sinle-dropdown {
     padding: 1.5rem 1.5rem 1.5rem 0;
@@ -78,7 +78,6 @@ $selected-color: #3e759c;
   }
   .select__option_selected {
     background-color: $selected-color;
-    opacity: 0.8;
     color: white;
     display: flex;
     align-items: center;
@@ -87,7 +86,6 @@ $selected-color: #3e759c;
   .select__option:hover {
     background-color: $selected-color;
     color: white;
-    opacity: 0.8;
     cursor: pointer;
     transition: 0.25s background-color ease-in-out;
   }

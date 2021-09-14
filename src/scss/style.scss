@@ -38,34 +38,19 @@ body {
     position: relative;
     width: 70%;
 }
-.ui-inputgroup {
+.ui-inputgroup,
+.ui-buttongroup,
+.ui-dropdown,
+.ui-radiobutton,
+.ui-checkbox,
+.ui-inputswitch,
+.ui-inputmask,
+.ui-tree {
     padding: 0 20px;
     margin-bottom: 60px;
     }
-.ui-buttongroup {
-    padding: 0 20px;
-    margin-bottom: 60px;
-}
 .ui-dropdown {
-    padding: 0 20px;
-    margin-bottom: 60px;
     box-sizing: content-box;
-}
-.ui-radiobutton {
-    padding: 0 20px;
-    margin-bottom: 60px;
-}
-.ui-checkbox {
-    padding: 0 20px;
-    margin-bottom: 60px;
-}
-.ui-inputswitch {
-    padding: 0 20px;
-    margin-bottom: 60px;
-}
-.ui-inputmask {
-    padding: 0 20px;
-    margin-bottom: 60px;
 }
 .title {
     color: $title-color;

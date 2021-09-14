@@ -1,0 +1,40 @@
+.checkTree {
+    position: relative;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    display: block;
+    width: 80%;
+      ul {
+        list-style-type: none;
+            label {
+                line-height: 2rem;
+                font-size: .95rem;
+                font-weight: 300;
+                margin-left: 9px;
+            }
+      }
+      li {
+        padding-left: 15px;
+        user-select: none;
+          ul {
+            padding-left: 15px;
+            padding-top: 2px;
+          }
+      }
+      .checkTree-open:before {
+        content: "\25BE";
+      }
+      .checkTree-close:before {
+        content: "\25B8"
+      }
+      .checkTree-open, .checkTree-close {
+        margin-left: -16px;
+        padding: 0 8px;
+      }
+  } 
+  .checkTree > ul {
+    padding: 0;
+    margin: 0;
+  }
+  #scale {
+    transform:scale(1.3);
+  }

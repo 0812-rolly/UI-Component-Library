@@ -1,5 +1,5 @@
 /* Customize the label (the container) */
-$checkboxActive: #3e759c;
+$checkboxActive: #007bff;
 $borderColor: #d1d7e3;
 $markColor: #fff;
 
@@ -22,7 +22,7 @@ $markColor: #fff;
   input {
       display: none;
       &:checked ~ .check-mark {
-        background: rgba($checkboxActive, 0.8);
+        background: $checkboxActive;
         border: transparent;
         transition: .7s ease;
         &:after {

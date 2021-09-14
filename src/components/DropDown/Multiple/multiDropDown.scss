@@ -1,7 +1,7 @@
 $background-color: #fff; 
 $border-color: #ccc;
 $text-color: #262626;
-$selected-color: #3e759c;
+$selected-color: #007bff;
 
 .multiselect {
     position: relative;
@@ -149,7 +149,6 @@ select[data-multi-select-plugin] {
 .search-container ul li:hover {
     background-color: $selected-color;
     color: white;
-    opacity: 0.8;
     cursor: pointer;
     transition: 0.25s background-color ease-in-out;
 }
