@@ -1,0 +1,195 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import "src/scss/common.scss";
+
+$background-color: #fff; 
+$border-color: #ccc;
+$text-color: #262626;
+$primary-color: #007bff;
+$dark-text:   #5f6982;
+
+ .fileUpload {
+    position: relative;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    display: block;
+    width: 40%;
+    text-align: center;
+
+    h2 {
+        font-family: "Roboto", sans-serif;
+        font-size: 26px;
+        line-height: 1;
+        color: $primary-color;
+        margin-bottom: 0;
+      }
+      p {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        color: $dark-text;
+      }
+  }
+   /* Upload Demo */
+  
+  .uploader {
+    display: block;
+    clear: both;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+  
+    label {
+      float: left;
+      clear: both;
+      width: 100%;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      background: $background-color;
+      border-radius: 7px;
+      border: 3px solid #eee;
+      transition: all .2s ease;
+      user-select: none;
+  
+      &:hover {
+        border-color: $primary-color;
+      }
+      &.hover {
+        border: 3px solid $primary-color;
+        box-shadow: inset 0 0 0 6px #eee;
+        
+        #start {
+          i.fa {
+            transform: scale(0.8);
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  
+    #start {
+      float: left;
+      clear: both;
+      width: 100%;
+      &.hidden {
+        display: none;
+      }
+      i.fa {
+        font-size: 50px;
+        margin-bottom: 1rem;
+        transition: all .7s ease-in-out;
+      }
+    }
+    #response {
+      float: left;
+      clear: both;
+      width: 100%;
+      &.hidden {
+        display: none;
+      }
+      #messages {
+        margin-bottom: 1rem;
+        margin-top: .5rem;
+      }
+    }
+
+    #uploaded > span {
+      color: $primary-color;
+      font-size: 14px;
+      margin-top: 20px;
+      font-weight: 400;
+    }
+  
+    #file-image {
+      display: inline;
+      margin: 0 auto .5rem auto;
+      width: auto;
+      height: auto;
+      max-width: 180px;
+      &.hidden {
+        display: none;
+      }
+    }
+    
+    #notimage {
+      display: block;
+      float: left;
+      clear: both;
+      font-size: 0.9rem;
+      color: rgb(128, 23, 23);
+      width: 100%;
+      &.hidden {
+        display: none;
+      }
+    }
+  
+    progress,
+    .progress {
+  /*     appearance: none; */
+      display: inline;
+      clear: both;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 180px;
+      height: 8px;
+      border: 0;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      background-color: #eee;
+      overflow: hidden;
+    }
+  
+    .progress[value]::-webkit-progress-bar {
+      border-radius: 4px;
+      background-color: #eee;
+    }
+  
+    .progress[value]::-webkit-progress-value {
+      background: linear-gradient(to right, darken($primary-color,8%) 0%,$primary-color 50%);
+      border-radius: 4px; 
+    }
+    .progress[value]::-moz-progress-bar {
+      background: linear-gradient(to right, darken($primary-color,8%) 0%, $primary-color 50%);
+      border-radius: 4px; 
+    }
+  
+    input[type="file"] {
+      display: none;
+    }
+  
+    div {
+      margin: 0 0 .5rem 0;
+      color: $dark-text;
+    }
+    .btn {
+      display: inline-block;
+      margin: .7rem .5rem 1rem .5rem;
+      clear: both;
+      font-family: inherit;
+      font-weight: 400;
+      font-size: .9rem;
+      text-decoration: none;
+      text-transform: initial;
+      border: none;
+      border-radius: .2rem;
+      outline: none;
+      padding: 0 1rem;
+      height: 36px;
+      line-height: 36px;
+      color: $background-color;
+      transition: all 0.2s ease-in-out;
+      box-sizing: border-box;
+      background: $primary-color;
+      border-color: $primary-color;
+      cursor: pointer;
+    }
+  }
+  #submitButton {
+    margin-top: 30px;
+    background: transparent;
+    color: #262626;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    width: 150px;
+  }
+
+  #submitButton:hover {
+   transform: scale(1.05);
+    }

@@ -16,7 +16,7 @@ const Confirm = {
                         <span class="confirm__title">${options.title}</span>
                         <button class="confirm__close">&times;</button>
                     </div>
-                    <div class="confirm__content">${options.message}</div>
+                    <div class="confirm__content"><i class="fas fa-exclamation-triangle"></i>  ${options.message}</div>
                     <div class="confirm__buttons">
                         <button class="confirm__button confirm__button--ok confirm__button--fill">${options.okText}</button>
                         <button class="confirm__button confirm__button--cancel">${options.cancelText}</button>

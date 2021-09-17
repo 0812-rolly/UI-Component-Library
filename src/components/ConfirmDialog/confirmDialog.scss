@@ -94,6 +94,11 @@ $primary-color: #007bff;
     line-height: 1.8em;
 }
 
+.fa-exclamation-triangle:before {
+    content: "\f071";
+    margin: 0 10px;
+}
+
 .confirm__buttons {
     display: flex;
     justify-content: flex-end;
