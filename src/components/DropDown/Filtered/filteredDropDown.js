@@ -1,3 +1,5 @@
+(function createFilteredDropDown() {
+
 // Получаем dropdowns
 const dropdowns = document.querySelectorAll('[data-dropdown]');
 
@@ -139,3 +141,4 @@ function filterItems(itemsArr, menu) {
 		}
   }
 }
+}())

@@ -1,3 +1,5 @@
+(function createDragAndDrop() {
+
 const draggables = document.querySelectorAll('.draggable')
 const containers = document.querySelectorAll('.container')
 
@@ -37,3 +39,4 @@ function getDragAfterElement(container, y) {
     }
   }, { offset: Number.NEGATIVE_INFINITY }).element
 }
+}())

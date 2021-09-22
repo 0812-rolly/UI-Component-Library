@@ -385,5 +385,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-});
+})
 

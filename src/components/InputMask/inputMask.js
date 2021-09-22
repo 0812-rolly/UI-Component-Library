@@ -45,4 +45,4 @@ input.addEventListener("input", (e) => {
   }
 
   input.value = result;
-});
+})
