@@ -76,45 +76,6 @@ const Confirm = {
     })
   });
 
-const draggables = document.querySelectorAll('.draggable')
-const containers = document.querySelectorAll('.container')
-
-draggables.forEach(draggable => {
-  draggable.addEventListener('dragstart', () => {
-    draggable.classList.add('dragging')
-  })
-
-  draggable.addEventListener('dragend', () => {
-    draggable.classList.remove('dragging')
-  })
-})
-
-containers.forEach(container => {
-  container.addEventListener('dragover', e => {
-    e.preventDefault()
-    const afterElement = getDragAfterElement(container, e.clientY)
-    const draggable = document.querySelector('.dragging')
-    if (afterElement == null) {
-      container.appendChild(draggable)
-    } else {
-      container.insertBefore(draggable, afterElement)
-    }
-  })
-})
-
-function getDragAfterElement(container, y) {
-  const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')]
-
-  return draggableElements.reduce((closest, child) => {
-    const box = child.getBoundingClientRect()
-    const offset = y - box.top - box.height / 2
-    if (offset < 0 && offset > closest.offset) {
-      return { offset: offset, element: child }
-    } else {
-      return closest
-    }
-  }, { offset: Number.NEGATIVE_INFINITY }).element
-}
 function imageUpload(){
     function Init() {
   
@@ -191,42 +152,14 @@ function imageUpload(){
       }
     }
   
-    function setProgressMaxValue(e) {
-      var pBar = document.getElementById('file-progress');
-  
-      if (e.lengthComputable) {
-        pBar.max = e.total;
-      }
-    }
-  
-    function updateFileProgress(e) {
-      var pBar = document.getElementById('file-progress');
-  
-      if (e.lengthComputable) {
-        pBar.value = e.loaded;
-      }
-    }
-  
     function uploadFile(file) {
   
       var xhr = new XMLHttpRequest(),
         fileInput = document.getElementById('class-roster-file'),
-        pBar = document.getElementById('file-progress'),
         fileSizeLimit = 1024; // In MB
       if (xhr.upload) {
 
         if (file.size <= fileSizeLimit * 1024 * 1024) {
-
-          pBar.style.display = 'inline';
-          xhr.upload.addEventListener('loadstart', setProgressMaxValue, false);
-          xhr.upload.addEventListener('progress', updateFileProgress, false);
-  
-
-          xhr.onreadystatechange = function(e) {
-            if (xhr.readyState == 4) {
-              pBar.className = (xhr.status == 200 ? "success" : "failure");
-            }
-          };
   
           // Start upload
           xhr.open('POST', document.getElementById('file-upload-form').action, true);
@@ -435,6 +368,45 @@ let jsonObj = {
   };
   
   checkTree.init("checkTree",jsonObj);
+const draggables = document.querySelectorAll('.draggable')
+const containers = document.querySelectorAll('.container')
+
+draggables.forEach(draggable => {
+  draggable.addEventListener('dragstart', () => {
+    draggable.classList.add('dragging')
+  })
+
+  draggable.addEventListener('dragend', () => {
+    draggable.classList.remove('dragging')
+  })
+})
+
+containers.forEach(container => {
+  container.addEventListener('dragover', e => {
+    e.preventDefault()
+    const afterElement = getDragAfterElement(container, e.clientY)
+    const draggable = document.querySelector('.dragging')
+    if (afterElement == null) {
+      container.appendChild(draggable)
+    } else {
+      container.insertBefore(draggable, afterElement)
+    }
+  })
+})
+
+function getDragAfterElement(container, y) {
+  const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')]
+
+  return draggableElements.reduce((closest, child) => {
+    const box = child.getBoundingClientRect()
+    const offset = y - box.top - box.height / 2
+    if (offset < 0 && offset > closest.offset) {
+      return { offset: offset, element: child }
+    } else {
+      return closest
+    }
+  }, { offset: Number.NEGATIVE_INFINITY }).element
+}
 // Получаем dropdowns
 const dropdowns = document.querySelectorAll('[data-dropdown]');
 

@@ -74,42 +74,14 @@ function imageUpload(){
       }
     }
   
-    function setProgressMaxValue(e) {
-      var pBar = document.getElementById('file-progress');
-  
-      if (e.lengthComputable) {
-        pBar.max = e.total;
-      }
-    }
-  
-    function updateFileProgress(e) {
-      var pBar = document.getElementById('file-progress');
-  
-      if (e.lengthComputable) {
-        pBar.value = e.loaded;
-      }
-    }
-  
     function uploadFile(file) {
   
       var xhr = new XMLHttpRequest(),
         fileInput = document.getElementById('class-roster-file'),
-        pBar = document.getElementById('file-progress'),
         fileSizeLimit = 1024; // In MB
       if (xhr.upload) {
 
         if (file.size <= fileSizeLimit * 1024 * 1024) {
-
-          pBar.style.display = 'inline';
-          xhr.upload.addEventListener('loadstart', setProgressMaxValue, false);
-          xhr.upload.addEventListener('progress', updateFileProgress, false);
-  
-
-          xhr.onreadystatechange = function(e) {
-            if (xhr.readyState == 4) {
-              pBar.className = (xhr.status == 200 ? "success" : "failure");
-            }
-          };
   
           // Start upload
           xhr.open('POST', document.getElementById('file-upload-form').action, true);
