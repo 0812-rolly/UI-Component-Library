@@ -1,3 +1,4 @@
+//добавить проверку на существование такого класса
 const input = document.querySelector(".tel");
 
 const prefixNumber = (str) => {

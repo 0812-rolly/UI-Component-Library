@@ -64,7 +64,7 @@ const Confirm = {
         });
     }
 };
-
+document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#btnConfDialog').addEventListener('click', () => {
     Confirm.open({
       title: 'Rectalgle background color change',
@@ -73,4 +73,5 @@ const Confirm = {
         // Enter your code
       }
     })
-  });
+  })
+})

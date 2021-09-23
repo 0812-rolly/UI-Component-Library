@@ -1,6 +1,5 @@
 
 /* define constants for adding classes */
-(function createSingleDropDown() {
   const CLASS_NAME_SELECT = 'select';
   const CLASS_NAME_ACTIVE = 'select_show';
   const CLASS_NAME_SELECTED = 'select__option_selected';
@@ -159,5 +158,4 @@
       ],
     });
   })
-  } ())
   
