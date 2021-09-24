@@ -1,3 +1,4 @@
+(function createConfirmDialog(){
 const Confirm = {
     open (options) {
         options = Object.assign({}, {
@@ -74,4 +75,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   })
-})
+});
+}());

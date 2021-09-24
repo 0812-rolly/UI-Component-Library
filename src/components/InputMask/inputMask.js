@@ -1,3 +1,4 @@
+(function createInputMask(){
 //добавить проверку на существование такого класса
 const input = document.querySelector(".tel");
 
@@ -46,4 +47,5 @@ input.addEventListener("input", (e) => {
   }
 
   input.value = result;
-})
+});
+}());

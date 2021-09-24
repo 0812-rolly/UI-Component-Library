@@ -1,3 +1,4 @@
+(function createCheckTree(){
 let jsonObj = {
     "nodes": {
     "1": {
@@ -130,3 +131,4 @@ let jsonObj = {
   };
   
   checkTree.init("checkTree",jsonObj);
+}());

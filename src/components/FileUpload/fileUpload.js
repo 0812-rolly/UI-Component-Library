@@ -1,7 +1,6 @@
+(function createFileUpload(){
 function imageUpload(){
     function Init() {
-  
-      console.log("Upload Initialised");
   
       var fileSelect    = document.getElementById('file-upload'),
           fileDrag      = document.getElementById('file-drag'),
@@ -109,4 +108,5 @@ imageUpload();
           event.preventDefault();  
             // your logic
           document.location.reload();
-  })
+  });
+}());

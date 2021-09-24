@@ -1,4 +1,4 @@
-
+(function createSingleDropDown() {
 /* define constants for adding classes */
   const CLASS_NAME_SELECT = 'select';
   const CLASS_NAME_ACTIVE = 'select_show';
@@ -20,7 +20,7 @@
       }
       this._elToggle = this._elRoot.querySelector(SELECTOR_DATA_TOGGLE);
       this._elRoot.addEventListener('click', this._onClick.bind(this));
-    }
+    };
     
     // классы select__toggle и атрибуты data-select="toggle", data-index предназначены для отображения выбранного значения и открытия при нажатии на него выдающего списка с опциями
     
@@ -35,7 +35,7 @@
           this._changeValue(target);
           break;
       }
-    }
+    };
     _update(option) { // обновляет значения атрибутов в зависимости от выбранной опции, генерирует событие 'select.change'
       const selected = this._elRoot.querySelector(SELECTOR_OPTION_SELECTED);
       if (selected) {
@@ -48,7 +48,7 @@
       this._elRoot.dispatchEvent(new CustomEvent('select.change'));
       this._params.onSelected ? this._params.onSelected(this, option) : null;
       return option.dataset['value'];
-    }
+    };
     _reset() { // сбрасывает состояние, генерирует событие 'select.change'
       const selected = this._elRoot.querySelector(SELECTOR_OPTION_SELECTED);
       if (selected) {
@@ -60,36 +60,36 @@
       this._elRoot.dispatchEvent(new CustomEvent('select.change'));
       this._params.onSelected ? this._params.onSelected(this, null) : null;
       return '';
-    }
+    };
     _changeValue(option) { // при изменении выбранной опции
       if (option.classList.contains(CLASS_NAME_SELECTED)) {
         return;
       }
       this._update(option);
       this.hide();
-    }
+    };
     show() { //показывает выпадающий список с опциями
       document.querySelectorAll(SELECTOR_ACTIVE).forEach(select => {
         select.classList.remove(CLASS_NAME_ACTIVE);
       });
       this._elRoot.classList.add(CLASS_NAME_ACTIVE);
-    }
+    };
     hide() { //скрывает dropdown меню
       this._elRoot.classList.remove(CLASS_NAME_ACTIVE);
-    }
+    };
     toggle() { //переключает видимость выпадающего меню
       if (this._elRoot.classList.contains(CLASS_NAME_ACTIVE)) {
         this.hide();
       } else {
         this.show();
       }
-    }
+    };
     dispose() { //удаляет обработчики событий, связанные с этим селектом
       this._elRoot.removeEventListener('click', this._onClick);
-    }
+    };
     get value() { 
       return this._elToggle.value; //позволяет как получить выбранную опцию...
-    }
+    };
     set value(value) { // ...так и установить её
       let isExists = false;
       this._elRoot.querySelectorAll('.select__option').forEach((option) => {
@@ -101,18 +101,18 @@
       if (!isExists) {
         return this._reset();
       }
-    }
+    };
     get selectedIndex() {
       return this._elToggle.dataset['index'];
-    }
+    };
     set selectedIndex(index) {
       const option = this._elRoot.querySelector(`.select__option[data-index="${index}"]`); 
       if (option) {
         return this._update(option);
       }
       return this._reset();
-    }
-  }
+    };
+  };
   
   CustomSelect.template = params => { // функция для генерации HTML-кода селекта в зависимости от переданных аргументов
     const name = params['name'];
@@ -157,5 +157,5 @@
         ['c#', 'C#'],
       ],
     });
-  })
-  
+  });
+}());

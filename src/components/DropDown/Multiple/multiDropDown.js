@@ -1,3 +1,4 @@
+(function createMultiDropDown(){
 // Initialize function, create initial tokens with itens that are already selected by the user
 function init(element) {
     // Create div that wroaps all the elements inside (select, elements selected, search div) to put select inside
@@ -386,4 +387,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
+}());

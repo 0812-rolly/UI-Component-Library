@@ -1,3 +1,4 @@
+(function createFilteredDropDown(){
 // Получаем dropdowns
 const dropdowns = document.querySelectorAll('[data-dropdown]');
 
@@ -80,7 +81,7 @@ function createCustomDropdown(dropdown) {
 		this.querySelector('input').focus();
 		selected.classList.add('active');
 	}
-  }
+  };
 
   // Устанавливаем выбранную опцию
 	function setSelected(selected, dropdown, menu) {
@@ -107,7 +108,7 @@ function createCustomDropdown(dropdown) {
 	  }
 	});
 	this.classList.add('selected');
-  }
+  };
 
 // Фильтрация элементов
 function filterItems(itemsArr, menu) {
@@ -130,7 +131,7 @@ function filterItems(itemsArr, menu) {
 		}
 	  }
 	});
-  }
+  };
 
   // Закрываем dropdown если кликаем а его пределами
 	function closeIfClickedOutside(menu, e) {
@@ -138,4 +139,5 @@ function filterItems(itemsArr, menu) {
 		menu.style.display = 'none';
 		}
   }
-}
+};
+}());

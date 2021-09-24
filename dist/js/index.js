@@ -1,4 +1,5 @@
 
+(function createConfirmDialog(){
 const Confirm = {
     open (options) {
         options = Object.assign({}, {
@@ -75,7 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   })
-})
+});
+}());
 
 const draggables = document.querySelectorAll('.draggable')
 const containers = document.querySelectorAll('.container')
@@ -116,6 +118,119 @@ function getDragAfterElement(container, y) {
     }
   }, { offset: Number.NEGATIVE_INFINITY }).element
 }
+(function createFileUpload(){
+function imageUpload(){
+    function Init() {
+  
+      var fileSelect    = document.getElementById('file-upload'),
+          fileDrag      = document.getElementById('file-drag'),
+          submitButton  = document.getElementById('submit-button');
+  
+      fileSelect.addEventListener('change', fileSelectHandler, false);
+  
+      var xhr = new XMLHttpRequest();
+      if (xhr.upload) {
+
+        fileDrag.addEventListener('dragover', fileDragHover, false);
+        fileDrag.addEventListener('dragleave', fileDragHover, false);
+        fileDrag.addEventListener('drop', fileSelectHandler, false);
+      }
+    }
+  
+    function fileDragHover(e) {
+      var fileDrag = document.getElementById('file-drag');
+  
+      e.stopPropagation();
+      e.preventDefault();
+  
+      fileDrag.className = (e.type === 'dragover' ? 'hover' : 'modal-body file-upload');
+    }
+  
+    function fileSelectHandler(e) {
+      // Fetch FileList object
+      var files = e.target.files || e.dataTransfer.files;
+  
+      // Cancel event and hover styling
+      fileDragHover(e);
+  
+      for (var i = 0, f; f = files[i]; i++) {
+        parseFile(f);
+        uploadFile(f);
+      }
+    }
+  
+    function output(msg) {
+      var m = document.getElementById('messages');
+      m.innerHTML = msg;
+      var uploaded = document.getElementById('uploaded');
+      uploaded.innerHTML = "<span class='fade-in-bottom'>✔ File selected</span>";
+    }
+  
+    function parseFile(file) {
+  
+      console.log(file.name);
+      output(
+        '<strong>' + encodeURI(file.name) + '</strong>'
+      );
+      
+      var imageName = file.name;
+  
+      var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
+      if (isGood) {
+        document.getElementById('start').classList.add("hidden");
+        document.getElementById('response').classList.remove("hidden");
+        document.getElementById('notimage').classList.add("hidden");
+
+        document.getElementById('file-image').classList.remove("hidden");
+        document.getElementById('file-image').src = URL.createObjectURL(file);
+      }
+      else {
+        document.getElementById('file-image').classList.add("hidden");
+        document.getElementById('notimage').classList.remove("hidden");
+        document.getElementById('start').classList.remove("hidden");
+        document.getElementById('response').classList.add("hidden");
+        document.getElementById("file-upload-form").reset();
+      }
+    }
+  
+    function uploadFile(file) {
+  
+      var xhr = new XMLHttpRequest(),
+        fileInput = document.getElementById('class-roster-file'),
+        fileSizeLimit = 1024; // In MB
+      if (xhr.upload) {
+
+        if (file.size <= fileSizeLimit * 1024 * 1024) {
+  
+          // Start upload
+          xhr.open('POST', document.getElementById('file-upload-form').action, true);
+          xhr.setRequestHeader('X-File-Name', file.name);
+          xhr.setRequestHeader('X-File-Size', file.size);
+          xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+          xhr.send(file);
+        } else {
+          output('Please upload a smaller file (< ' + fileSizeLimit + ' MB).');
+        }
+      }
+    }
+  
+    // Check for the various File API support.
+    if (window.File && window.FileList && window.FileReader) {
+      Init();
+    } else {
+      document.getElementById('file-drag').style.display = 'none';
+    }
+  }
+imageUpload();
+  
+  document.querySelector('#file-upload-form')
+      .addEventListener('submit', event => {
+          event.preventDefault();  
+            // your logic
+          document.location.reload();
+  });
+}());
+(function createInputMask(){
 //добавить проверку на существование такого класса
 const input = document.querySelector(".tel");
 
@@ -164,7 +279,9 @@ input.addEventListener("input", (e) => {
   }
 
   input.value = result;
-})
+});
+}());
+(function createCheckTree(){
 let jsonObj = {
     "nodes": {
     "1": {
@@ -297,118 +414,8 @@ let jsonObj = {
   };
   
   checkTree.init("checkTree",jsonObj);
-function imageUpload(){
-    function Init() {
-  
-      console.log("Upload Initialised");
-  
-      var fileSelect    = document.getElementById('file-upload'),
-          fileDrag      = document.getElementById('file-drag'),
-          submitButton  = document.getElementById('submit-button');
-  
-      fileSelect.addEventListener('change', fileSelectHandler, false);
-  
-      var xhr = new XMLHttpRequest();
-      if (xhr.upload) {
-
-        fileDrag.addEventListener('dragover', fileDragHover, false);
-        fileDrag.addEventListener('dragleave', fileDragHover, false);
-        fileDrag.addEventListener('drop', fileSelectHandler, false);
-      }
-    }
-  
-    function fileDragHover(e) {
-      var fileDrag = document.getElementById('file-drag');
-  
-      e.stopPropagation();
-      e.preventDefault();
-  
-      fileDrag.className = (e.type === 'dragover' ? 'hover' : 'modal-body file-upload');
-    }
-  
-    function fileSelectHandler(e) {
-      // Fetch FileList object
-      var files = e.target.files || e.dataTransfer.files;
-  
-      // Cancel event and hover styling
-      fileDragHover(e);
-  
-      for (var i = 0, f; f = files[i]; i++) {
-        parseFile(f);
-        uploadFile(f);
-      }
-    }
-  
-    function output(msg) {
-      var m = document.getElementById('messages');
-      m.innerHTML = msg;
-      var uploaded = document.getElementById('uploaded');
-      uploaded.innerHTML = "<span class='fade-in-bottom'>✔ File selected</span>";
-    }
-  
-    function parseFile(file) {
-  
-      console.log(file.name);
-      output(
-        '<strong>' + encodeURI(file.name) + '</strong>'
-      );
-      
-      var imageName = file.name;
-  
-      var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
-      if (isGood) {
-        document.getElementById('start').classList.add("hidden");
-        document.getElementById('response').classList.remove("hidden");
-        document.getElementById('notimage').classList.add("hidden");
-
-        document.getElementById('file-image').classList.remove("hidden");
-        document.getElementById('file-image').src = URL.createObjectURL(file);
-      }
-      else {
-        document.getElementById('file-image').classList.add("hidden");
-        document.getElementById('notimage').classList.remove("hidden");
-        document.getElementById('start').classList.remove("hidden");
-        document.getElementById('response').classList.add("hidden");
-        document.getElementById("file-upload-form").reset();
-      }
-    }
-  
-    function uploadFile(file) {
-  
-      var xhr = new XMLHttpRequest(),
-        fileInput = document.getElementById('class-roster-file'),
-        fileSizeLimit = 1024; // In MB
-      if (xhr.upload) {
-
-        if (file.size <= fileSizeLimit * 1024 * 1024) {
-  
-          // Start upload
-          xhr.open('POST', document.getElementById('file-upload-form').action, true);
-          xhr.setRequestHeader('X-File-Name', file.name);
-          xhr.setRequestHeader('X-File-Size', file.size);
-          xhr.setRequestHeader('Content-Type', 'multipart/form-data');
-          xhr.send(file);
-        } else {
-          output('Please upload a smaller file (< ' + fileSizeLimit + ' MB).');
-        }
-      }
-    }
-  
-    // Check for the various File API support.
-    if (window.File && window.FileList && window.FileReader) {
-      Init();
-    } else {
-      document.getElementById('file-drag').style.display = 'none';
-    }
-  }
-imageUpload();
-  
-  document.querySelector('#file-upload-form')
-      .addEventListener('submit', event => {
-          event.preventDefault();  
-            // your logic
-          document.location.reload();
-  })
+}());
+(function createFilteredDropDown(){
 // Получаем dropdowns
 const dropdowns = document.querySelectorAll('[data-dropdown]');
 
@@ -491,7 +498,7 @@ function createCustomDropdown(dropdown) {
 		this.querySelector('input').focus();
 		selected.classList.add('active');
 	}
-  }
+  };
 
   // Устанавливаем выбранную опцию
 	function setSelected(selected, dropdown, menu) {
@@ -518,7 +525,7 @@ function createCustomDropdown(dropdown) {
 	  }
 	});
 	this.classList.add('selected');
-  }
+  };
 
 // Фильтрация элементов
 function filterItems(itemsArr, menu) {
@@ -541,7 +548,7 @@ function filterItems(itemsArr, menu) {
 		}
 	  }
 	});
-  }
+  };
 
   // Закрываем dropdown если кликаем а его пределами
 	function closeIfClickedOutside(menu, e) {
@@ -549,8 +556,9 @@ function filterItems(itemsArr, menu) {
 		menu.style.display = 'none';
 		}
   }
-}
-
+};
+}());
+(function createMultiDropDown(){
 // Initialize function, create initial tokens with itens that are already selected by the user
 function init(element) {
     // Create div that wroaps all the elements inside (select, elements selected, search div) to put select inside
@@ -939,9 +947,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+}());
 
-
-
+(function createSingleDropDown() {
 /* define constants for adding classes */
   const CLASS_NAME_SELECT = 'select';
   const CLASS_NAME_ACTIVE = 'select_show';
@@ -963,7 +971,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       this._elToggle = this._elRoot.querySelector(SELECTOR_DATA_TOGGLE);
       this._elRoot.addEventListener('click', this._onClick.bind(this));
-    }
+    };
     
     // классы select__toggle и атрибуты data-select="toggle", data-index предназначены для отображения выбранного значения и открытия при нажатии на него выдающего списка с опциями
     
@@ -978,7 +986,7 @@ document.addEventListener("DOMContentLoaded", () => {
           this._changeValue(target);
           break;
       }
-    }
+    };
     _update(option) { // обновляет значения атрибутов в зависимости от выбранной опции, генерирует событие 'select.change'
       const selected = this._elRoot.querySelector(SELECTOR_OPTION_SELECTED);
       if (selected) {
@@ -991,7 +999,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this._elRoot.dispatchEvent(new CustomEvent('select.change'));
       this._params.onSelected ? this._params.onSelected(this, option) : null;
       return option.dataset['value'];
-    }
+    };
     _reset() { // сбрасывает состояние, генерирует событие 'select.change'
       const selected = this._elRoot.querySelector(SELECTOR_OPTION_SELECTED);
       if (selected) {
@@ -1003,36 +1011,36 @@ document.addEventListener("DOMContentLoaded", () => {
       this._elRoot.dispatchEvent(new CustomEvent('select.change'));
       this._params.onSelected ? this._params.onSelected(this, null) : null;
       return '';
-    }
+    };
     _changeValue(option) { // при изменении выбранной опции
       if (option.classList.contains(CLASS_NAME_SELECTED)) {
         return;
       }
       this._update(option);
       this.hide();
-    }
+    };
     show() { //показывает выпадающий список с опциями
       document.querySelectorAll(SELECTOR_ACTIVE).forEach(select => {
         select.classList.remove(CLASS_NAME_ACTIVE);
       });
       this._elRoot.classList.add(CLASS_NAME_ACTIVE);
-    }
+    };
     hide() { //скрывает dropdown меню
       this._elRoot.classList.remove(CLASS_NAME_ACTIVE);
-    }
+    };
     toggle() { //переключает видимость выпадающего меню
       if (this._elRoot.classList.contains(CLASS_NAME_ACTIVE)) {
         this.hide();
       } else {
         this.show();
       }
-    }
+    };
     dispose() { //удаляет обработчики событий, связанные с этим селектом
       this._elRoot.removeEventListener('click', this._onClick);
-    }
+    };
     get value() { 
       return this._elToggle.value; //позволяет как получить выбранную опцию...
-    }
+    };
     set value(value) { // ...так и установить её
       let isExists = false;
       this._elRoot.querySelectorAll('.select__option').forEach((option) => {
@@ -1044,18 +1052,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!isExists) {
         return this._reset();
       }
-    }
+    };
     get selectedIndex() {
       return this._elToggle.dataset['index'];
-    }
+    };
     set selectedIndex(index) {
       const option = this._elRoot.querySelector(`.select__option[data-index="${index}"]`); 
       if (option) {
         return this._update(option);
       }
       return this._reset();
-    }
-  }
+    };
+  };
   
   CustomSelect.template = params => { // функция для генерации HTML-кода селекта в зависимости от переданных аргументов
     const name = params['name'];
@@ -1100,5 +1108,5 @@ document.addEventListener("DOMContentLoaded", () => {
         ['c#', 'C#'],
       ],
     });
-  })
-  
+  });
+}());
