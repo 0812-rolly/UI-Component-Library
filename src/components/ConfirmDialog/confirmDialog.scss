@@ -23,20 +23,25 @@ $primary-color: #007bff;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     padding: 10px;
-    box-sizing: border-box;
-
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
     opacity: 0;
-    animation-name: confirm---open;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
-
+    -webkit-animation-name: confirm---open;
+        animation-name: confirm---open;
+    -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+    -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        align-items: center;
+    -webkit-box-pack: center;
+        justify-content: center;
 }
 
 .confirm--close {
-    animation-name: confirm---close;
+    -webkit-animation-name: confirm---close;
+        animation-name: confirm---close;
 }
 
 .confirm__window {
@@ -47,14 +52,19 @@ $primary-color: #007bff;
     font-family: 'Noto Sans', sans-serif;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     opacity: 0;
-    transform: scale(0.75);
-    animation-name: confirm__window---open;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
-    animation-delay: 0.2s;
+    -webkit-transform: scale(0.75);
+        transform: scale(0.75);
+    -webkit-animation-name: confirm__window---open;
+        animation-name: confirm__window---open;
+    -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+    -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    -webkit-animation-delay: 0.2s;
+        animation-delay: 0.2s;
 }
 
 .confirm__titlebar,
@@ -67,8 +77,10 @@ $primary-color: #007bff;
     background: #f1f1f1;
     color: $text-color;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        align-items: center;
+    -webkit-box-pack: justify;
+        justify-content: space-between;
 }
 
 .confirm__title {
@@ -80,9 +92,11 @@ $primary-color: #007bff;
     background: none;
     outline: none;
     border: none;
-    transform: scale(2.5);
+    -webkit-transform: scale(2.5);
+        transform: scale(2.5);
     color: $text-color;
-    transition: color 0.15s;
+    -webkit-transition: color 0.15s;
+        transition: color 0.15s;
 }
 
 .confirm__close:hover {
@@ -101,7 +115,8 @@ $primary-color: #007bff;
 
 .confirm__buttons {
     display: flex;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        justify-content: flex-end;
 }
 
 .confirm__button {
@@ -124,23 +139,37 @@ $primary-color: #007bff;
 }
 
 .confirm__button:focus {
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
-
+@-webkit-keyframes confirm---open {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
 @keyframes confirm---open {
     from { opacity: 0 }
     to { opacity: 1 }
 }
-
+@-webkit-keyframes confirm---close {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
 @keyframes confirm---close {
     from { opacity: 1 }
     to { opacity: 0 }
 }
-
+@-webkit-keyframes confirm__window---open {
+    to {
+        opacity: 1;
+        -webkit-transform: scale(1);
+            transform: scale(1);
+    }
+}
 @keyframes confirm__window---open {
     to {
         opacity: 1;
-        transform: scale(1);
+        -webkit-transform: scale(1);
+            transform: scale(1);
     }
 }
   

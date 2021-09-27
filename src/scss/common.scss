@@ -21,7 +21,8 @@ $danger: #dc3545;
     display: flex;
     position: relative;
     flex-wrap: wrap;
-    align-items: stretch;
+    -webkit-box-align: stretch;
+      align-items: stretch;
     width: 100%;
 }
 @mixin inputPrimary() {
@@ -34,12 +35,14 @@ $danger: #dc3545;
     background-color: #fff;
     background-clip: padding-box;
     width: 1%;
-    flex: 1 1 auto;
+    -webkit-box-flex: 1;
+      flex: 1 1 auto;
     border: 1px solid #ced4da;
 }
 @mixin addonsSymbolStyle() {
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+      align-items: center;
     padding: .375rem .75rem;
     margin-bottom: 0;
     font-size: 1rem;

@@ -36,22 +36,34 @@ $radioActive: #007bff;
             }
             &:before {
                 background: $radioBorder;
+                -webkit-transition: background .2s ease, -webkit-transform .4s cubic-bezier(.175, .885, .32, 2);
+                transition: background .2s ease, -webkit-transform .4s cubic-bezier(.175, .885, .32, 2);
                 transition: background .2s ease, transform .4s cubic-bezier(.175, .885, .32, 2);
+                transition: background .2s ease, transform .4s cubic-bezier(.175, .885, .32, 2), -webkit-transform .4s cubic-bezier(.175, .885, .32, 2);
             }
             &:after {
                 background: #fff;
-                transform: scale(.85);
+                -webkit-transform: scale(.85);
+                    transform: scale(.85);
+                -webkit-transition: -webkit-transform .6s cubic-bezier(.175, .885, .32, 1.4);
+                transition: -webkit-transform .6s cubic-bezier(.175, .885, .32, 1.4);
                 transition: transform .6s cubic-bezier(.175, .885, .32, 1.4);
+                transition: transform .6s cubic-bezier(.175, .885, .32, 1.4), -webkit-transform .6s cubic-bezier(.175, .885, .32, 1.4);
             }
         }
         &:checked + span {
             &:before {
-                transform: scale(1.04);
+                -webkit-transform: scale(1.04);
+                    transform: scale(1.04);
                 background: rgba($radioActive, 0.9);
             }
             &:after {
-                transform: scale(.4);
+                -webkit-transform: scale(.4);
+                    transform: scale(.4);
+                -webkit-transition: -webkit-transform .3s ease;
+                transition: -webkit-transform .3s ease;
                 transition: transform .3s ease;
+                transition: transform .3s ease, -webkit-transform .3s ease;
             }
         }
     }
@@ -59,15 +71,18 @@ $radioActive: #007bff;
         input {
             & + span {
                 &:before {
-                    transform: scale(.92);
+                    -webkit-transform: scale(.92);
+                        transform: scale(.92);
                 }
                 &:after {
-                    transform: scale(.74);
+                    -webkit-transform: scale(.74);
+                        transform: scale(.74);
                 }
             }
             &:checked + span {
                 &:after {
-                    transform: scale(.4);
+                    -webkit-transform: scale(.4);
+                        transform: scale(.4);
                 }
             }
         }

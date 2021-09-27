@@ -20,13 +20,16 @@ $selected-color: #007bff;
     border-radius: 4px;
     color: $text-color;
     cursor: pointer;
-    align-items: center;
+    -webkit-box-align: center;
+      align-items: center;
     text-align: start;
     width: 100%;
     font-size: 0.95rem;
     padding: 12px 20px;
     margin: 15px 0;
-    user-select: none;
+    -webkit-user-select: none;
+      -moz-user-select: none;
+        user-select: none;
     justify-content: space-between;
   }
   
@@ -44,7 +47,8 @@ $selected-color: #007bff;
   }
   
   .select_show .select__toggle::after {
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
   }
   
   .select__dropdown {
@@ -80,12 +84,15 @@ $selected-color: #007bff;
     background-color: $selected-color;
     color: white;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+      align-items: center;
+    -webkit-box-pack: justify;
+      justify-content: space-between;
   }
   .select__option:hover {
     background-color: $selected-color;
     color: white;
     cursor: pointer;
-    transition: 0.25s background-color ease-in-out;
+    -webkit-transition: 0.25s background-color ease-in-out;
+      transition: 0.25s background-color ease-in-out;
   }

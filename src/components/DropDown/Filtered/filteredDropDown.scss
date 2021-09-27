@@ -17,13 +17,17 @@ $selected-color: #007bff;
     border-radius: 4px;
     color: $text-color;
     cursor: pointer;
-    align-items: center;
+    -webkit-box-align: center;
+      align-items: center;
     width: 100%;
     font-size: 0.95rem;
     padding: 12px 20px;
     margin: 15px 0;
-    user-select: none;
-    justify-content: space-between;
+    -webkit-user-select: none;
+      -moz-user-select: none;
+        user-select: none;
+    -webkit-box-pack: justify;
+      justify-content: space-between;
   }
   
   .dropdown__selected::after {
@@ -42,7 +46,8 @@ $selected-color: #007bff;
     border-width: 4px;
     border-style: solid;
     border-color: $text-color transparent transparent;
-    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+      transform: rotateX(180deg);
   }
   
   .dropdown__menu {
@@ -66,30 +71,31 @@ $selected-color: #007bff;
     list-style: none;
   }
   .dropdown__menu_item {
-	padding: 6px 12px;
+	  padding: 6px 12px;
   }
   
   .dropdown__menu_search {
-	display: block;
-	width: 100%;
-	border: 0;
-  font-size: .9rem;
-	color: $text-color;
-	border-bottom: 1px solid $border-color;
-	padding: 12px;
-	outline: 0;
-	background-color: #f9f9f9;
+    display: block;
+    width: 100%;
+    border: 0;
+    font-size: .9rem;
+    color: $text-color;
+    border-bottom: 1px solid $border-color;
+    padding: 12px;
+    outline: 0;
+    background-color: #f9f9f9;
   }
   
   .dropdown__menu_item:last-child {
-	border-bottom: 0;
+	  border-bottom: 0;
   }
   
   .dropdown__menu_item:hover {
-	background-color: $selected-color;
+	  background-color: $selected-color;
     color: white;
     cursor: pointer;
-    transition: 0.25s background-color ease-in-out;
+    -webkit-transition: 0.25s background-color ease-in-out;
+      transition: 0.25s background-color ease-in-out;
   }
   
   .dropdown__menu_item.selected,
@@ -97,7 +103,9 @@ $selected-color: #007bff;
     background-color: $selected-color;
     color: white;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+      align-items: center;
+    -webkit-box-pack: justify;
+      justify-content: space-between;
   }
   

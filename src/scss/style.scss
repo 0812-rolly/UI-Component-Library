@@ -3,7 +3,8 @@ $main-color: #3a3c3d;
 $title-color: #56B280;
 
 *, :after, :before {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
 }
 body {
     font-family: $font;
@@ -28,7 +29,8 @@ body {
     text-align: center;
     position: sticky;
     top: 0;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
     z-index: 1;
 }
 .cl-content {
@@ -53,7 +55,8 @@ body {
     margin-bottom: 60px;
     }
 .ui-dropdown {
-    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+        box-sizing: content-box;
 }
 .title {
     color: $title-color;
@@ -80,5 +83,6 @@ body {
 .input:focus { 
     outline: none;
     border-color: #9ecaed;
-    box-shadow: 0 0 5px #9ecaed;
+    -webkit-box-shadow: 0 0 5px #9ecaed;
+        box-shadow: 0 0 5px #9ecaed;
 }

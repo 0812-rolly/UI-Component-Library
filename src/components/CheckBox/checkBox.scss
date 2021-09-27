@@ -15,7 +15,9 @@ $markColor: #fff;
   margin: 16px 0;
   padding-left: 34px;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+    -moz-user-select: none;
+      user-select: none;
   line-height: 2rem;
   font-size: 0.95rem;
   font-weight: 300;
@@ -24,6 +26,7 @@ $markColor: #fff;
       &:checked ~ .check-mark {
         background: $checkboxActive;
         border: transparent;
+        -webkit-transition: .7s ease;
         transition: .7s ease;
         &:after {
           display: block;
@@ -32,7 +35,8 @@ $markColor: #fff;
   }
   &:hover {
     input ~ .check-mark {
-      transform: scale(.92);
+      -webkit-transform: scale(.92);
+        transform: scale(.92);
     }
 }
 }
@@ -44,12 +48,14 @@ $markColor: #fff;
   width: 22px;
   border-radius: 4px;
   border: 1px solid $borderColor;
+  -webkit-transition: .7s ease;
   transition: .7s ease;
   &:after {
     content: "";
     position: absolute;
     display: none;
-    transform: scale(.4);
+    -webkit-transform: scale(.4);
+      transform: scale(.4);
   }
 }
 .check_box .check-mark:after {
@@ -59,5 +65,6 @@ $markColor: #fff;
   height: 11px;
   border: 1px solid $markColor;
   border-width: 0 2.8px 2.8px 0;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
